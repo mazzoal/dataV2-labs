@@ -1,0 +1,120 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs24 \cf0 versions 2\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+CREATE TABLE cars (\
+VIN INT AUTO_INCREMENT PRIMARY KEY,\
+manufactures VARCHAR(30) NOT NULL,\
+model varchar(30),\
+year INT,\
+color VARCHAR(30),\
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\
+);\
+\
+CREATE TABLE customers (\
+customer_id INT AUTO_INCREMENT PRIMARY KEY,\
+name VARCHAR(30) NOT NULL,\
+phone_number INT,\
+email VARCHAR(50),\
+address VARCHAR(200),\
+city VARCHAR(50),\
+state_province VARCHAR(50),\
+country VARCHAR(50),\
+post_code INT,\
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\
+);\
+\
+\
+CREATE TABLE salesperson (\
+staff_id INT AUTO_INCREMENT PRIMARY KEY,\
+name VARCHAR(50) NOT NULL,\
+store VARCHAR(50),\
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\
+);\
+\
+CREATE TABLE invoices (\
+invoice_number INT AUTO_INCREMENT PRIMARY KEY,\
+date INT NOT NULL,\
+car INT NOT NULL,\
+customer INT,\
+saleperson INT,\
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\
+);\
+\
+ALTER TABLE cars\
+DROP COLUMN VIN;\
+\
+ALTER TABLE cars\
+ADD VIN VARCHAR(40) PRIMARY KEY;\
+\
+INSERT INTO cars VALUES\
+("Peugeot", "Rifter", 2019, "Red", CURRENT_TIMESTAMP, "ZM8G7BEUQZ97IH46V"),\
+("Ford", "Fusion", 2018, "White", CURRENT_TIMESTAMP, "RKXVNNIHLVVZOUB4M"),\
+("Toyota", "RAV4", 2018, "Silver", CURRENT_TIMESTAMP, "HKNDGS7CU31E9Z7JW"),\
+("Volvo", "V60", 2019, "Gray", CURRENT_TIMESTAMP, "DAM41UDN3CHU2WVF6");\
+\
+\
+\
+\
+ALTER TABLE Customers\
+DROP COLUMN customer_id;\
+\
+ALTER TABLE Customers\
+ADD customer_id INT PRIMARY KEY;\
+\
+\
+INSERT INTO Customers VALUES\
+    ("Pablo Picasso", 34636176382, "ppicasso@gmail.com", "Paseo Chopera 14", "Madrid", "Madrid", "Spain", 28045, CURRENT_TIMESTAMP, 10001),\
+	("Abraham Lincoln", 13059077086, "lincoln@us.gov", "120 SW 8th St", "Miami", "Florida", "UnitedStates", 33130, CURRENT_TIMESTAMP, 20001),\
+	("Napol\'e9on Bonaparte", 33179754000, "hello@napoleon.me", "40 Rue du Colis\'e9e", "Paris, \'cele-de-France", "France", 75008, CURRENT_TIMESTAMP, 30001);\
+\
+\
+\
+\
+\
+\
+ALTER TABLE invoices\
+DROP COLUMN date;\
+\
+ALTER TABLE invoices\
+ADD date VARCHAR(50);\
+\
+ALTER TABLE Invoices\
+DROP COLUMN VIN;\
+\
+ALTER TABLE Invoices\
+DROP COLUMN car;\
+\
+\
+ALTER TABLE Invoices\
+ADD VIN VARCHAR(50);\
+\
+INSERT INTO invoices VALUES\
+(852399038, 10001, 00001, CURRENT_TIMESTAMP, "22-08-2018", "3K096I98581DHSNUP"),\
+(731166526, 20001, 00002, CURRENT_TIMESTAMP, "31-12-2018", "ZM8G7BEUQZ97IH46V"),\
+(271135104, 30001, 00003, CURRENT_TIMESTAMP, "22-01-2019", "RKXVNNIHLVVZOUB4M");\
+\
+ALTER TABLE salesperson\
+DROP COLUMN staff_id;\
+\
+ALTER TABLE salesperson\
+ADD staff_id INT PRIMARY KEY;\
+\
+\
+INSERT INTO salesperson VALUES\
+("Petey Cruiser", "Madrid", CURRENT_TIMESTAMP, 00001),\
+("Anna Sthesia", "Barcelona", CURRENT_TIMESTAMP, 00002),\
+("Paul Molive", "Berlin", CURRENT_TIMESTAMP, 00003),\
+("Gail Forcewind", "Paris", CURRENT_TIMESTAMP, 00004),\
+("Paige Turner", "Mimia", CURRENT_TIMESTAMP, 00005),\
+("Bob Frapples", "MexicoCity", CURRENT_TIMESTAMP, 00006),\
+("Walter Melon", "Amsterdam", CURRENT_TIMESTAMP, 00007),\
+("Shonda Leer", "S\'e3o Paulo", CURRENT_TIMESTAMP, 00008);\
+}
