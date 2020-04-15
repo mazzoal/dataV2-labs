@@ -15,13 +15,19 @@ Remember for this lab: there is a right answer. But there is no perfect way to e
 ### Challenge 1: What is the difference between expected value and mean?
 You know both concepts but, is there a difference? Are they synonims? Start investigating. 
 
+Arithmetic mean is simple average of numbers not weighted by anything. The Expected Value is the same but the numbers are weighted by their probability
+
 As a good reference (once you have looked for some information) you have   [this](http://expected.news/value2) article.
 
 ### Challenge 2: What is the "problem" in science with p-values?
 We have told you that a lot of scientifical investigations are based on p-values. The last week, Nature magazine published [an article](http://nature.social/statistical4) regarding the problem. Start digging on it!
 
-Don't hesitate to use more articles if you want to :)
+According to the article, xe cannot conclude that there is "no difference" or "no association" just because a P-value has reached a certain magnitude or because a confidence interval includes zero. Or should one come to the conclusion that two studies contradict each other because one had a statistically significant result but the other did not.
 
+also:
+-p-values condition on what is unknown in the H0 and do not condition on what is known in the data
+-p-values can bring indirect evidence against an assertion but it cannot bring evidence in favor of the assertion
+-it can be difficult to compute p-values
 
 ### Challenge 3: Applying testing to a specific case: A/B testing.
 A/B testing is a widely used tool to understand differences between two samples. It is a way to measure the impact of something we did: 
